@@ -10,9 +10,12 @@ import '../styles/index.css'
 
 // components
 import Home from './components/Home';
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Home/>
-  </React.StrictMode>,
-)
+import SecondsCounter from './components/SecondsCounter';
+let counter = 0;
+setInterval(function () {
+  // Generar mi aplicación de React
+  ReactDOM.createRoot(document.getElementById("root")).render(<SecondsCounter number={String(counter).padStart(6, "0")} />
+  );
+  counter++;
+  console.log(counter);
+}, 1000);
